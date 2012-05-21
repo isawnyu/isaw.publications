@@ -13,7 +13,27 @@ from isaw.publications.config import PROJECTNAME
 
 PublicationSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
-    # -*- Your Archetypes field definitions here ... -*-
+    atapi.ImageField(
+    name='publication_Logo',
+    widget=atapi.ImageWidget(
+        label=u'Publication Logo',
+        description=_(u'publication_logo', default=u'Optional image associated with this publication.'),
+        label_msgid='ISAW_Publication_logo',
+        il8n_domain='ISAW_Publications',
+        ),
+
+    required=False,
+    searchable=False),
+
+
+    atapi.BlobField(
+    name-'publication_File',
+    widget=atapi.FileWidget(
+        label=u'Publication file',
+        description=_(u'publication_file', default=u'Optional file that contains the publication.'),
+        label_msgid='ISAW_Publication_file',
+        il8n_domain='ISAW_Publications',
+        ),
 
 ))
 
