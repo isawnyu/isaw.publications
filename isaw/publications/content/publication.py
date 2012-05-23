@@ -26,14 +26,30 @@ PublicationSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     searchable=False),
 
 
-    atapi.BlobField(
-    name-'publication_File',
+    atapi.FileField(
+    name='publication_File',
     widget=atapi.FileWidget(
         label=u'Publication file',
         description=_(u'publication_file', default=u'Optional file that contains the publication.'),
         label_msgid='ISAW_Publication_file',
         il8n_domain='ISAW_Publications',
         ),
+
+    required=False,
+    searchable=False),
+
+
+    atapi.TextField(
+    name='publication_Information',
+    widget=atapi.RichWidget(
+        label=u'Publication Information',
+        description=_(u'publication_info', default=u'Publication information.'),
+        label_msgid='ISAW_Publication_info',
+        il8n_domain='ISAW_Publications',
+        ),
+
+    required=False,
+    searchable=False),
 
 ))
 
